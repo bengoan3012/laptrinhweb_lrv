@@ -1,37 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>Laravel 10.48.0 - CRUD User Example</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách người dùng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .actions a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: blue;
+        }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination a {
+            padding: 5px 10px;
+            text-decoration: none;
+            border: 1px solid gray;
+            margin: 0 5px;
+            color: black;
+        }
+        .pagination a:hover {
+            background: lightgray;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
-    <div class="container">
-        <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.createUser') }}">Create user</a>
-                    </li>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('signout') }}">Logout</a>
-                    </li>
-                @endguest
-            </ul>
-        </div>
-    </div>
-</nav>
-@yield('content')
+@yield('content')  
 </body>
 </html>

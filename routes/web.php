@@ -8,42 +8,36 @@ use App\Http\Controllers\CrudUserController;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Định nghĩa các route cho ứng dụng
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
-// Trang chính (mặc định là trang login)
+Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+
+// //Route::get('login', [CrudUserController::class, 'login'])->name('login');
+// Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
+
+// Route::get('create', [CrudUserController::class, 'createUser'])->name('user.createUser');
+// Route::post('create', [CrudUserController::class, 'postUser'])->name('user.postUser');
+
+Route::get('read', [CrudUserController::class, 'readUser'])->name('user.readUser');
+
+Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
+
+Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
+Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
+
+Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
+
+Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
+
 Route::get('/', function () {
-    return view('crud_user.login');
+    return view('welcome');
 });
 
-//  Dashboard (chỉ hiển thị nếu user đã đăng nhập)
-Route::middleware(['auth'])->group(function () {
-    Route::get('dashboard', [CrudUserController::class, 'dashboard'])->name('dashboard');
-
-    //  Hiển thị danh sách người dùng
-    Route::get('users', [CrudUserController::class, 'listUser'])->name('user.list');
-
-    //  Xem chi tiết user (cần truyền ID)
-    Route::get('user/{id}', [CrudUserController::class, 'readUser'])->name('user.readUser');
-
-    //  Xóa user (cần truyền ID, dùng method DELETE)
-    Route::delete('user/{id}', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
-
-    //  Hiển thị form cập nhật user
-    Route::get('user/{id}/edit', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
-
-    //  Xử lý cập nhật user
-    Route::post('user/{id}/edit', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
-
-    //  Đăng xuất
-    Route::post('signout', [CrudUserController::class, 'signOut'])->name('signout');
-});
-
-//  Đăng nhập
-Route::get('login', [CrudUserController::class, 'login'])->name('login');
-Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
-
-//  Đăng ký user
-Route::get('register', [CrudUserController::class, 'createUser'])->name('user.createUser');
-Route::post('register', [CrudUserController::class, 'postUser'])->name('user.postUser');
+Route::get('/login', [CrudUserController::class, 'login'])->name('login');
+Route::post('/login', [CrudUserController::class, 'authUser'])->name('authUser');
+Route::get('/register', [CrudUserController::class, 'createUser'])->name('createUser');
+Route::post('/register', [CrudUserController::class, 'postUser'])->name('postUser');
