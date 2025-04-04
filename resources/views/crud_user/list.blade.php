@@ -9,8 +9,8 @@
                 <th>#</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Phone</th>
-                <th>Street</th>
+                <!-- <th>Phone</th>
+                <th>Street</th> -->
                 <th>Thao tác</th>
             </tr>
             <tr>
@@ -18,8 +18,8 @@
                 <td>{{$lstuser->id}}</td>
                 <td>{{$lstuser->name}}</td>
                 <td>{{$lstuser->email}}</td>
-                <td>{{$lstuser->phone}}</td>
-                <td>{{$lstuser->street}}</td>
+                <!-- <td>{{$lstuser->phone}}</td>
+                <td>{{$lstuser->street}}</td> -->
                 <td class="actions">
                     <a href="#">Edit</a> | <a href="#">View</a> | <a href="#">Delete</a>
                 </td>

@@ -47,16 +47,20 @@ class CrudUserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'phone' => 'required|max:10',
-            'street' => 'required',
+            'mssv' => 'required|string|unique:users',
+            'address' => 'required|string',
+            // 'phone' => 'required|max:10',
+            // 'street' => 'required',
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone' => $request->phone,
-            'street' => $request->street,
+            'mssv' => $request->mssv,
+            'address' => $request->address,
+            // 'phone' => $request->phone,
+            // 'street' => $request->street,
         ]);
 
         return redirect("login")->withSuccess('Account created successfully. Please login.');
