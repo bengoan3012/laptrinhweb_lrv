@@ -47,20 +47,14 @@ class CrudUserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'mssv' => 'required|string|unique:users',
-            'address' => 'required|string',
-            // 'phone' => 'required|max:10',
-            // 'street' => 'required',
+            
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'mssv' => $request->mssv,
-            'address' => $request->address,
-            // 'phone' => $request->phone,
-            // 'street' => $request->street,
+            
         ]);
 
         return redirect("login")->withSuccess('Account created successfully. Please login.');
@@ -84,7 +78,7 @@ class CrudUserController extends Controller
     public function updateUser(Request $request)
     {
         $user = User::find($request->get('id'));
-        return view('crud_user.update', ['user' => $user]);
+        return view('crud_user.update1', ['user' => $user]);
     }
 
     // Xử lý cập nhật user

@@ -15,15 +15,8 @@
             <label>Password</label>
             <input type="password" id="password" name="password" placeholder="Nhập password">
 
-            <label for="mssv">Mã số sinh viên</label>
-            <input type="text" name="mssv" required>
-
-            <label for="address">Địa chỉ</label>
-            <input type="text" name="address" required>
-            <!-- <label>Phone</label>
-            <input type="text" id="phone" name="phone" placeholder="Nhập phone">
-            <label>Street</label>
-            <input type="text" id="street" name="street" placeholder="Nhập street"> -->
+            
+            
             <button class="button">Đăng Ký</button>
             <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
         </form>

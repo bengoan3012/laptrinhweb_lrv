@@ -21,10 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'mssv',
-        'address'
-        // 'phone',
-        // 'street'
+        
     ];
 
 
@@ -47,5 +44,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        
     ];
 }

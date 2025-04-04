@@ -21,7 +21,7 @@
                 <!-- <td>{{$lstuser->phone}}</td>
                 <td>{{$lstuser->street}}</td> -->
                 <td class="actions">
-                    <a href="#">Edit</a> | <a href="#">View</a> | <a href="#">Delete</a>
+                <a href="{{ route('user.updateUser', ['id' => $lstuser->id]) }}">Edit</a> | <a href="#">View</a> | <a href="#">Delete</a>
                 </td>
                 @endforeach
             </tr>

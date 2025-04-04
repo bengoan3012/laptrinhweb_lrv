@@ -26,8 +26,8 @@ Route::get('read', [CrudUserController::class, 'readUser'])->name('user.readUser
 
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 
-Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
-Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
+// Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
+// Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 
 Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
 
@@ -41,3 +41,5 @@ Route::get('/login', [CrudUserController::class, 'login'])->name('login');
 Route::post('/login', [CrudUserController::class, 'authUser'])->name('authUser');
 Route::get('/register', [CrudUserController::class, 'createUser'])->name('createUser');
 Route::post('/register', [CrudUserController::class, 'postUser'])->name('postUser');
+Route::get('/user/update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
+Route::post('/user/update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
